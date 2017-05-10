@@ -4,17 +4,25 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './store/counter';
+import { CounterComponent } from './components/conter.component';
+import { ContainerComponent } from './containers/container.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    StoreModule.provideStore({counter: counterReducer}),
   ],
-  providers: [],
+  declarations: [
+    AppComponent,
+    ContainerComponent,
+    CounterComponent,
+  ],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
