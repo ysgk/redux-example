@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './store/counter';
 import { CounterComponent } from './components/conter.component';
-import { ContainerComponent } from './containers/container.component';
+import { CounterContainerComponent } from './containers/counter-container.component';
+import { CounterService } from './providers/counter.service';
 
 @NgModule({
   imports: [
@@ -18,10 +19,11 @@ import { ContainerComponent } from './containers/container.component';
   ],
   declarations: [
     AppComponent,
-    ContainerComponent,
+    CounterContainerComponent,
     CounterComponent,
   ],
   providers: [
+    CounterService,
   ],
   bootstrap: [AppComponent]
 })

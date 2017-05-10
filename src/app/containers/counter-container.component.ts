@@ -1,11 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Store } from '@ngrx/store';
-import { INCREMENT, DECREMENT, RESET } from '../store/counter';
-import { AppState } from '../store/state';
+import { CounterService } from '../providers/counter.service';
 
 @Component({
-  selector: 'app-container',
+  selector: 'app-counter-container',
   template: `<app-counter
     [value]="counter$|async"
     (increment)="increment()"
@@ -14,26 +12,25 @@ import { AppState } from '../store/state';
   ></app-counter>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContainerComponent {
+export class CounterContainerComponent {
 
   counter$: Observable<number>;
 
   constructor(
-    private store: Store<AppState>,
+    private service: CounterService,
   ) {
-    this.counter$ = this.store.select('counter');
+    this.counter$ = this.service.get();
   }
 
   increment() {
-    this.store.dispatch({type: INCREMENT});
+    this.service.increment();
   }
 
   decrement() {
-    this.store.dispatch({type: DECREMENT});
+    this.service.decrement();
   }
 
   reset() {
-    this.store.dispatch({type: RESET});
+    this.service.reset();
   }
-
 }
