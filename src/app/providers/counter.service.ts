@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import * as counter from '../actions/counter';
-import { AppState } from '../reducers';
+import { AppState, getCounterValue } from '../reducers';
 
 @Injectable()
 export class CounterService {
@@ -14,7 +14,7 @@ export class CounterService {
   }
 
   get(): Observable<number> {
-    return this.store.select('counter');
+    return this.store.select(getCounterValue);
   }
 
   increment() {

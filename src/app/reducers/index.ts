@@ -7,3 +7,6 @@ export interface AppState {
 export const reducers = {
   counter: counter.reducer,
 };
+
+export const getCounterState = (state: AppState) => state.counter;
+export const getCounterValue = (state: AppState) => counter.getValue(getCounterState(state));

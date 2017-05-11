@@ -1,21 +1,27 @@
 import * as counter from '../actions/counter';
 
 export interface State {
-  counter: number;
+  value: number;
 }
 
-export function reducer(state: number = 0, action: counter.Actions): number {
+const initialState: State = {
+  value: 0,
+};
+
+export function reducer(state = initialState, action: counter.Actions): State {
   switch (action.type) {
     case counter.INCREMENT:
-      return state + 1;
+      return { value: state.value + 1 };
 
     case counter.DECREMENT:
-      return state - 1;
+      return { value: state.value - 1 };
 
     case counter.RESET:
-      return 0;
+      return { value: 0 };
 
     default:
       return state;
   }
 }
+
+export const getValue = (state: State) => state.value;
