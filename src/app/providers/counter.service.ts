@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from '../store/state';
 import { Observable } from 'rxjs/Observable';
-import { COUNTER_DECREMENT, COUNTER_INCREMENT, COUNTER_RESET } from '../store/counter';
+import * as counter from '../actions/counter';
+import { AppState } from '../reducers';
 
 @Injectable()
 export class CounterService {
@@ -18,14 +18,14 @@ export class CounterService {
   }
 
   increment() {
-    this.store.dispatch({type: COUNTER_INCREMENT});
+    this.store.dispatch(new counter.IncrementAction());
   }
 
   decrement() {
-    this.store.dispatch({type: COUNTER_DECREMENT});
+    this.store.dispatch(new counter.DecrementAction());
   }
 
   reset() {
-    this.store.dispatch({type: COUNTER_RESET});
+    this.store.dispatch(new counter.ResetAction());
   }
 }

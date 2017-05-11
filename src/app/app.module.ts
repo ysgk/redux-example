@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-import { counterReducer } from './store/counter';
+import { counterReducer } from './reducers/counter';
 import { CounterComponent } from './components/counter.component';
 import { CounterContainerComponent } from './containers/counter-container.component';
 import { CounterService } from './providers/counter.service';
