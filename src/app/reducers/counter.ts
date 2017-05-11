@@ -4,7 +4,7 @@ export interface State {
   counter: number;
 }
 
-export function counterReducer(state: number = 0, action: counter.Actions): number {
+export function reducer(state: number = 0, action: counter.Actions): number {
   switch (action.type) {
     case counter.INCREMENT:
       return state + 1;

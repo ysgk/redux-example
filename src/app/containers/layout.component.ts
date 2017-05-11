@@ -1,10 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-layout',
   template: `
-    <app-counter-container></app-counter-container>`,
+    <div>
+      <ng-content></ng-content>
+    </div>
+  `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
-}
+export class LayoutComponent { }

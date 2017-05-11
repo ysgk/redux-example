@@ -1,26 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-
-import { AppComponent } from './app.component';
+import { AppComponent } from './containers/app.component';
 import { StoreModule } from '@ngrx/store';
-import { counterReducer } from './reducers/counter';
-import { CounterComponent } from './components/counter.component';
 import { CounterContainerComponent } from './containers/counter-container.component';
 import { CounterService } from './providers/counter.service';
+import { reducers } from './reducers';
+import { ComponentsModule } from './components/index';
+import { LayoutComponent } from './containers/layout.component';
 
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
-    StoreModule.provideStore({counter: counterReducer}),
+    ComponentsModule,
+    StoreModule.provideStore(reducers),
   ],
   declarations: [
     AppComponent,
+    LayoutComponent,
     CounterContainerComponent,
-    CounterComponent,
   ],
   providers: [
     CounterService,
