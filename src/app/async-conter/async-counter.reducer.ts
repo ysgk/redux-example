@@ -1,4 +1,4 @@
-import * as asyncCounter from '../actions/async-counter';
+import * as asyncCounter from './async-counter.actions';
 
 export interface State {
   value: number;

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import * as counter from '../actions/counter';
+import * as counter from './counter.actions';
 import { State, getCounterValue } from '../reducers';
 
 @Injectable()

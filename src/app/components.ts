@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CounterComponent } from './counter.component';
+import { CounterComponent } from './counter/counter.component';
 import { CommonModule } from '@angular/common';
-import { AsyncCounterComponent } from './async-counter.component';
+import { AsyncCounterComponent } from './async-conter/async-counter.component';
 
 export const COMPONENTS = [
   AsyncCounterComponent,

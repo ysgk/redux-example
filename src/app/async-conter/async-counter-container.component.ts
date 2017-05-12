@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { AsyncCounterService } from '../providers/async-counter.service';
+import { AsyncCounterService } from './async-counter.service';
 
 @Component({
   selector: 'app-async-counter-container',

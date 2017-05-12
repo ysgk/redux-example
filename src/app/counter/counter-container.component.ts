@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { CounterService } from '../providers/counter.service';
+import { CounterService } from './counter.service';
 
 @Component({
   selector: 'app-counter-container',

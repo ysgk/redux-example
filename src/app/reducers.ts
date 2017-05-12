@@ -1,5 +1,5 @@
-import * as counter from './counter';
-import * as asyncCounter from './async-counter';
+import * as counter from './counter/counter.reducer';
+import * as asyncCounter from './async-conter/async-counter.reducer';
 
 export interface State {
   counter: counter.State;

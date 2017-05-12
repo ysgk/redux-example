@@ -1,16 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './containers/app.component';
+import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-import { CounterContainerComponent } from './containers/counter-container.component';
-import { CounterService } from './providers/counter.service';
+import { CounterContainerComponent } from './counter/counter-container.component';
+import { CounterService } from './counter/counter.service';
 import { reducers } from './reducers';
-import { ComponentsModule } from './components/index';
-import { LayoutComponent } from './containers/layout.component';
-import { AsyncCounterContainerComponent } from './containers/async-counter-container.component';
-import { AsyncCounterService } from './providers/async-counter.service';
+import { ComponentsModule } from './components';
+import { LayoutComponent } from './layout.component';
+import { AsyncCounterContainerComponent } from './async-conter/async-counter-container.component';
+import { AsyncCounterService } from './async-conter/async-counter.service';
 import { EffectsModule } from '@ngrx/effects';
-import { AsyncCounterEffects } from './effects/async-counter';
+import { AsyncCounterEffects } from './async-conter/async-counter.effects';
 
 @NgModule({
   imports: [

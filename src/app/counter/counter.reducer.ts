@@ -1,4 +1,4 @@
-import * as counter from '../actions/counter';
+import * as counter from './counter.actions';
 
 export interface State {
   value: number;
