@@ -11,6 +11,9 @@ import { AsyncCounterContainerComponent } from './async-conter/async-counter-con
 import { AsyncCounterService } from './async-conter/async-counter.service';
 import { EffectsModule } from '@ngrx/effects';
 import { AsyncCounterEffects } from './async-conter/async-counter.effects';
+import { ConfirmCounterService } from './confirm-counter/confirm-counter.service';
+import { ConfirmCounterContainerComponent } from './confirm-counter/confirm-counter-container.component';
+import { ConfirmCounterEffects } from './confirm-counter/confirm-counter.effects';
 
 @NgModule({
   imports: [
@@ -18,15 +21,18 @@ import { AsyncCounterEffects } from './async-conter/async-counter.effects';
     ComponentsModule,
     StoreModule.provideStore(reducers),
     EffectsModule.run(AsyncCounterEffects),
+    EffectsModule.run(ConfirmCounterEffects),
   ],
   declarations: [
     AppComponent,
     AsyncCounterContainerComponent,
     LayoutComponent,
+    ConfirmCounterContainerComponent,
     CounterContainerComponent,
   ],
   providers: [
     AsyncCounterService,
+    ConfirmCounterService,
     CounterService,
   ],
   bootstrap: [AppComponent]

@@ -4,14 +4,6 @@ import { Observable } from 'rxjs/Observable';
 import * as asyncCounter from './async-counter.actions';
 import { State, getAsyncCounterValue, getAsyncCounterLoading } from '../reducers';
 
-function wait(delay = 1000): Promise<void> {
-  return new Promise<void>((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, delay);
-  });
-}
-
 @Injectable()
 export class AsyncCounterService {
 
@@ -35,21 +27,9 @@ export class AsyncCounterService {
 
   async decrement(): Promise<void> {
     this.store.dispatch(new asyncCounter.DecrementAction());
-    try {
-      await wait();
-      this.store.dispatch(new asyncCounter.DecrementSuccessAction());
-    } catch (e) {
-      this.store.dispatch(new asyncCounter.DecrementErrorAction());
-    }
   }
 
   async reset(): Promise<void> {
     this.store.dispatch(new asyncCounter.ResetAction());
-    try {
-      await wait();
-      this.store.dispatch(new asyncCounter.ResetSuccessAction());
-    } catch (e) {
-      this.store.dispatch(new asyncCounter.ResetErrorAction());
-    }
   }
 }

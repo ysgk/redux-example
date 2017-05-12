@@ -18,6 +18,22 @@ export class AsyncCounterEffects {
       return of(new asyncCounter.IncrementSuccessAction()).delay(200).takeUntil(next);
     });
 
+  @Effect() decrement$ = this.action$
+    .ofType(asyncCounter.DECREMENT)
+    .switchMap(() => {
+      const next = this.action$.ofType(asyncCounter.DECREMENT).skip(1);
+
+      return of(new asyncCounter.DecrementSuccessAction()).delay(200).takeUntil(next);
+    });
+
+  @Effect() reset$ = this.action$
+    .ofType(asyncCounter.RESET)
+    .switchMap(() => {
+      const next = this.action$.ofType(asyncCounter.RESET).skip(1);
+
+      return of(new asyncCounter.ResetSuccessAction()).delay(200).takeUntil(next);
+    });
+
   constructor(
     private action$: Actions,
   ) {

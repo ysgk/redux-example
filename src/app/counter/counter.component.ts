@@ -4,6 +4,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
   selector: 'app-counter',
   template: `
     <div class="counter">
+      <h3>Counter</h3>
       <button (click)="increment.emit()">Increment</button>
       <button (click)="decrement.emit()">Decrement</button>
       <span>{{value}}</span>
