@@ -1,4 +1,4 @@
-import * as confirmCounter from './confirm-counter.actions';
+import * as confirmCounter from '../actions/confirm-counter.actions';
 
 export interface State {
   value: number;

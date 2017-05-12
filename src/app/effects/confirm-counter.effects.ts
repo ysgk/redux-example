@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
-import * as confirmCounter from './confirm-counter.actions';
+import * as confirmCounter from '../actions/confirm-counter.actions';
 import 'rxjs/add/operator/map';
 
 function confirm(): boolean {

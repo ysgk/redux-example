@@ -1,6 +1,6 @@
-import * as counter from './counter/counter.reducer';
-import * as asyncCounter from './async-conter/async-counter.reducer';
-import * as confirmCounter from './confirm-counter/confirm-counter.reducer';
+import * as counter from './counter.reducer';
+import * as asyncCounter from './async-counter.reducer';
+import * as confirmCounter from './confirm-counter.reducer';
 
 export interface State {
   counter: counter.State;

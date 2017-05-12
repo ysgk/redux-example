@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import * as asyncCounter from './async-counter.actions';
-import { State, getAsyncCounterValue, getAsyncCounterLoading } from '../reducers';
+import * as asyncCounter from '../actions/async-counter.actions';
+import { State, getAsyncCounterValue, getAsyncCounterLoading } from '../reducers/index';
 
 @Injectable()
 export class AsyncCounterService {
