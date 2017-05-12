@@ -4,7 +4,7 @@ export const INCREMENT =      '[ConfirmCounter] Increment';
 export const DECREMENT =      '[ConfirmCounter] Decrement';
 export const RESET =          '[ConfirmCounter] Reset';
 export const RESET_CONFIRM =  '[ConfirmCounter] Reset Confirm';
-export const RESET_CANCEL =  '[ConfirmCounter] Reset Cancel';
+export const RESET_CANCEL =   '[ConfirmCounter] Reset Cancel';
 
 export class IncrementAction implements Action {
   readonly type = INCREMENT;

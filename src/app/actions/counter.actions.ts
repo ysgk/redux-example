@@ -1,8 +1,8 @@
 import { Action } from '@ngrx/store';
 
-export const INCREMENT = '[Counter] INCREMENT';
-export const DECREMENT = '[Counter] DECREMENT';
-export const RESET = '[Counter] RESET';
+export const INCREMENT =  '[Counter] INCREMENT';
+export const DECREMENT =  '[Counter] DECREMENT';
+export const RESET =      '[Counter] RESET';
 
 export class IncrementAction implements Action {
   readonly type = INCREMENT;
