@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import * as counter from '../actions/counter';
-import { AppState, getCounterValue } from '../reducers';
+import { State, getCounterValue } from '../reducers';
 
 @Injectable()
 export class CounterService {
 
   constructor(
-    private store: Store<AppState>,
+    private store: Store<State>,
   ) {
 
   }

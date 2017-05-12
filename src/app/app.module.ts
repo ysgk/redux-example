@@ -7,6 +7,9 @@ import { CounterService } from './providers/counter.service';
 import { reducers } from './reducers';
 import { ComponentsModule } from './components/index';
 import { LayoutComponent } from './containers/layout.component';
+import { AsyncCounterComponent } from './components/async-counter.component';
+import { AsyncCounterContainerComponent } from './containers/async-counter-container.component';
+import { AsyncCounterService } from './providers/async-counter.service';
 
 @NgModule({
   imports: [
@@ -16,10 +19,12 @@ import { LayoutComponent } from './containers/layout.component';
   ],
   declarations: [
     AppComponent,
+    AsyncCounterContainerComponent,
     LayoutComponent,
     CounterContainerComponent,
   ],
   providers: [
+    AsyncCounterService,
     CounterService,
   ],
   bootstrap: [AppComponent]
