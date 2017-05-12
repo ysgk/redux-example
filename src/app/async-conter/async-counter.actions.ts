@@ -1,14 +1,14 @@
 import { Action } from '@ngrx/store';
 
-export const INCREMENT =          '[Counter] Increment';
-export const INCREMENT_SUCCESS =  '[Counter] Increment Success';
-export const INCREMENT_ERROR =    '[Counter] Increment Error';
-export const DECREMENT =          '[Counter] Decrement';
-export const DECREMENT_SUCCESS =  '[Counter] Decrement Success';
-export const DECREMENT_ERROR =    '[Counter] Decrement Error';
-export const RESET =              '[Counter] Reset';
-export const RESET_SUCCESS =      '[Counter] Reset Success';
-export const RESET_ERROR =        '[Counter] Reset Error';
+export const INCREMENT =          '[AsyncCounter] Increment';
+export const INCREMENT_SUCCESS =  '[AsyncCounter] Increment Success';
+export const INCREMENT_ERROR =    '[AsyncCounter] Increment Error';
+export const DECREMENT =          '[AsyncCounter] Decrement';
+export const DECREMENT_SUCCESS =  '[AsyncCounter] Decrement Success';
+export const DECREMENT_ERROR =    '[AsyncCounter] Decrement Error';
+export const RESET =              '[AsyncCounter] Reset';
+export const RESET_SUCCESS =      '[AsyncCounter] Reset Success';
+export const RESET_ERROR =        '[AsyncCounter] Reset Error';
 
 export class IncrementAction implements Action {
   readonly type = INCREMENT;
