@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-counter',
+  selector: 'app-confirm-counter',
   template: `
-    <div class="counter">
+    <div class="confirm-counter">
+      <h3>Confirm Counter</h3>
       <button (click)="increment.emit()">Increment</button>
       <button (click)="decrement.emit()">Decrement</button>
       <span>{{value}}</span>
@@ -12,7 +13,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CounterComponent {
+export class ConfirmCounterComponent {
 
   @Input() value: number;
 

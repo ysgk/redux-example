@@ -1,25 +1,28 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { CounterService } from '../providers/counter.service';
+import { AsyncCounterService } from './async-counter.service';
 
 @Component({
-  selector: 'app-counter-container',
-  template: `<app-counter
+  selector: 'app-async-counter-container',
+  template: `<app-async-counter
     [value]="counter$|async"
+    [loading]="loading$|async"
     (increment)="increment()"
     (decrement)="decrement()"
     (reset)="reset()"
-  ></app-counter>`,
+  ></app-async-counter>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CounterContainerComponent {
+export class AsyncCounterContainerComponent {
 
   counter$: Observable<number>;
+  loading$: Observable<boolean>;
 
   constructor(
-    private service: CounterService,
+    private service: AsyncCounterService,
   ) {
-    this.counter$ = this.service.get();
+    this.counter$ = this.service.getCounter();
+    this.loading$ = this.service.getLoading();
   }
 
   increment() {
