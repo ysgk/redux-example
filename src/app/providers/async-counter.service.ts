@@ -3,12 +3,13 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import * as asyncCounter from '../actions/async-counter';
 import { State, getAsyncCounterValue, getAsyncCounterLoading } from '../reducers';
-import { timer } from 'rxjs/observable/timer';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/toPromise';
 
 function wait(delay = 1000): Promise<void> {
-  return timer(delay).map(() => null).toPromise();
+  return new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, delay);
+  });
 }
 
 @Injectable()
@@ -30,12 +31,6 @@ export class AsyncCounterService {
 
   async increment(): Promise<void> {
     this.store.dispatch(new asyncCounter.IncrementAction());
-    try {
-      await wait();
-      this.store.dispatch(new asyncCounter.IncrementSuccessAction());
-    } catch (e) {
-      this.store.dispatch(new asyncCounter.IncrementErrorAction());
-    }
   }
 
   async decrement(): Promise<void> {

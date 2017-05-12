@@ -7,15 +7,17 @@ import { CounterService } from './providers/counter.service';
 import { reducers } from './reducers';
 import { ComponentsModule } from './components/index';
 import { LayoutComponent } from './containers/layout.component';
-import { AsyncCounterComponent } from './components/async-counter.component';
 import { AsyncCounterContainerComponent } from './containers/async-counter-container.component';
 import { AsyncCounterService } from './providers/async-counter.service';
+import { EffectsModule } from '@ngrx/effects';
+import { AsyncCounterEffects } from './effects/async-counter';
 
 @NgModule({
   imports: [
     BrowserModule,
     ComponentsModule,
     StoreModule.provideStore(reducers),
+    EffectsModule.run(AsyncCounterEffects),
   ],
   declarations: [
     AppComponent,
