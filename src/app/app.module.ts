@@ -14,12 +14,14 @@ import { AsyncCounterEffects } from './effects/async-counter.effects';
 import { ConfirmCounterService } from './providers/confirm-counter.service';
 import { ConfirmCounterContainerComponent } from './containers/confirm-counter-container.component';
 import { ConfirmCounterEffects } from './effects/confirm-counter.effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   imports: [
     BrowserModule,
     ComponentsModule,
     StoreModule.provideStore(reducers),
+    StoreDevtoolsModule.instrumentOnlyWithExtension(),
     EffectsModule.run(AsyncCounterEffects),
     EffectsModule.run(ConfirmCounterEffects),
   ],
