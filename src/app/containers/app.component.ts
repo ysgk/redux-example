@@ -7,6 +7,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       <app-counter-container></app-counter-container>
       <app-async-counter-container></app-async-counter-container>
       <app-confirm-counter-container></app-confirm-counter-container>
+      <app-book-container></app-book-container>
     </app-layout>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

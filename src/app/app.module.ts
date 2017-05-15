@@ -15,6 +15,8 @@ import { ConfirmCounterService } from './providers/confirm-counter.service';
 import { ConfirmCounterContainerComponent } from './containers/confirm-counter-container.component';
 import { ConfirmCounterEffects } from './effects/confirm-counter.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { BookContainerComponent } from './containers/book-container.component';
+import { BookEffects } from './effects/book.effects';
 
 @NgModule({
   imports: [
@@ -24,9 +26,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
     EffectsModule.run(AsyncCounterEffects),
     EffectsModule.run(ConfirmCounterEffects),
+    EffectsModule.run(BookEffects),
   ],
   declarations: [
     AppComponent,
+    BookContainerComponent,
     AsyncCounterContainerComponent,
     LayoutComponent,
     ConfirmCounterContainerComponent,
