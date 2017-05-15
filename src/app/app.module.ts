@@ -20,6 +20,7 @@ import { BookContainerComponent } from './containers/book-container.component';
 import { BookEffects } from './effects/book.effects';
 import { routes } from './app.routes';
 import { HomePageComponent } from './containers/home-page.component';
+import { CounterPageComponent } from './containers/counter-page.component';
 
 @NgModule({
   imports: [
@@ -38,6 +39,7 @@ import { HomePageComponent } from './containers/home-page.component';
     AppComponent,
     AsyncCounterContainerComponent,
     BookContainerComponent,
+    CounterPageComponent,
     ConfirmCounterContainerComponent,
     CounterContainerComponent,
     HomePageComponent,

@@ -9,8 +9,11 @@ import * as layout from '../actions/layout.actions';
   template: `
     <app-layout>
       <app-sidenav [open]="showSidenav$|async">
-        <app-nav-item (activate)="closeSidenav()" routerLink="/" icon="book" hint="View your book collection">
+        <app-nav-item (activate)="closeSidenav()" routerLink="/" icon="home" hint="Home">
           Home
+        </app-nav-item>
+        <app-nav-item (activate)="closeSidenav()" routerLink="counter" icon="list" hint="Counter">
+          Counter
         </app-nav-item>
       </app-sidenav>
       <app-toolbar (openMenu)="openSidenav()">
