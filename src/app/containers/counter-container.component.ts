@@ -10,6 +10,7 @@ import { CounterService } from '../providers/counter.service';
     (decrement)="decrement()"
     (reset)="reset()"
   ></app-counter>`,
+  providers: [CounterService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CounterContainerComponent {

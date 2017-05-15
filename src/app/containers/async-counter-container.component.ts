@@ -11,6 +11,7 @@ import { AsyncCounterService } from '../providers/async-counter.service';
     (decrement)="decrement()"
     (reset)="reset()"
   ></app-async-counter>`,
+  providers: [AsyncCounterService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AsyncCounterContainerComponent {

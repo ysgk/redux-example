@@ -10,6 +10,7 @@ import { ConfirmCounterService } from '../providers/confirm-counter.service';
     (decrement)="decrement()"
     (reset)="reset()"
   ></app-confirm-counter>`,
+  providers: [ConfirmCounterService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ConfirmCounterContainerComponent {
