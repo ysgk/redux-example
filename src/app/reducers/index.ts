@@ -29,4 +29,5 @@ export const getConfirmCounterValue = (state: State) => confirmCounter.getValue(
 
 export const getBookState = (state: State) => state.book;
 export const getBooks = (state: State) => book.getBooks(getBookState(state));
+export const getBookCategories = (state: State) => book.getCategories(getBookState(state));
 export const getLoading = (state: State) => book.getLoading(getBookState(state));
