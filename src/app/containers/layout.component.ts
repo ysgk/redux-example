@@ -3,9 +3,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 @Component({
   selector: 'app-layout',
   template: `
-    <div>
+    <md-sidenav-container fullscreen>
+
       <ng-content></ng-content>
-    </div>
+
+    </md-sidenav-container>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
